@@ -103,7 +103,9 @@ const CourseProgress = () => {
             <video
               src={currentLecture?.videoUrl || initialLecture.videoUrl}
               controls
+               controlsList="nodownload"
               className="w-full h-auto md:rounded-lg"
+              onContextMenu={(e) => e.preventDefault()}
               onPlay={() =>
                 handleLectureProgress(currentLecture?._id || initialLecture._id)
               }
